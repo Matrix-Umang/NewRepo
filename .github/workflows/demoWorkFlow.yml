@@ -12,12 +12,17 @@ jobs:
     - name: sample job
       run: echo "HelloWorld"
       
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v4.6.0
+      with:   
+        name: sample job  
+        path: ${{github.workspace}}
   deploy:
       runs-on: ubuntu-latest
       needs: build
       steps:
         - uses: actions/download-artifact@v4
           with:
-            name: another job
+            name: sample job
             path: ${{github.workspace}}
 
