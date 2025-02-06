@@ -10,6 +10,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: sample job
-    - run: echo Hello World
+      run: echo "HelloWorld"
     
 
